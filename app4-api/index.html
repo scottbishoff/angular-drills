@@ -1,5 +1,18 @@
-<html ng-app="apiApp">
-	<body>
+<html ng-app="myApp">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+	<body ng-controller ='myCtrl'>
+
+		<div>
+			Bike Brand: <input placeholder='Please enter type of bike' ng-model='type'>
+			<div class = 'ad' ng-repeat='bike in bikes | filter: type'><img src = '{{bike.image}}' height="100" width="100">
+				<p> {{bike.title}}</p>
+				<p> {{bike.price}}</p>
+				<p> {{bike.city}}</p>
+				<br>
+
+			</div>
+		</div>
 		
 				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>

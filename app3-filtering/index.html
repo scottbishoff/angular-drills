@@ -1,7 +1,30 @@
-<html>
-	<body>
-		Something
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+<html ng-app='myApp'>
+	<body ng-controller='myCtrl'>
+		Filter: <input placeholder = 'Filter' ng-model='myFilter'>
+		<input type="checkbox" ng-model="email" ng-init="email=true" />Show email
+		<input type="checkbox" ng-model="name" ng-init="name=true" />Show name
+
+	<div>
+	<ul>
+		<li ng-repeat='data in myData |filter: myFilter' >
+			<span ng-bind= 'data.name' ng-if='name'></span>
+			<br>
+			<span ng-bind = 'data.email' ng-if='email'></span>
+			<br>
+			<br>
+		</li>	
+	</ul>	
+
+	</div>	
+
+
+
+
+
+
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
 		<script src="service.js"></script>
